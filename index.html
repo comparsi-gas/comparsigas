@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comparsi Gás | Nacional Gás — Peça Agora</title>
+  <meta name="description" content="Entrega rápida de gás de cozinha (GLP) em Carlos Barbosa, Barão e região. Pague no cartão, PIX ou dinheiro. Peça pelo WhatsApp." />
+  <meta name="theme-color" content="#E30613" />
+  <meta property="og:title" content="Comparsi Gás | Nacional Gás — Peça Agora" />
+  <meta property="og:description" content="Tele-entrega de GLP para residências e comércios. Clique e peça no WhatsApp!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.85em' font-size='90'>⛽</text></svg>">
+
+  <style>
+    :root{
+      --brand:#E30613;
+      --brand-dark:#C50510;
+      --accent:#00B37E; /* WhatsApp */
+      --blue:#0C4EA3;
+      --bg:#0F1115;
+      --card:#ffffff;
+      --text:#1F2937;
+      --muted:#6B7280;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --shadow-strong:0 20px 40px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    html{scroll-behavior:smooth}
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, "Noto Sans"; color:var(--text); line-height:1.5; background:#F5F7FB}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1120px, 92%); margin-inline:auto}
+
+    header{position:sticky; top:0; z-index:20; background:#fff; box-shadow:var(--shadow);}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    /* LOGO como imagem */
+    .logo{display:flex; align-items:center; gap:10px}
+    .logo-img{
+      display:block;
+      height:36px;         /* altura padrão do cabeçalho */
+      width:auto;          /* mantém proporção do PNG */
+      image-rendering:-webkit-optimize-contrast; /* nitidez em alguns navegadores */
+    }
+    @media (min-width:720px){
+      .logo-img{ height:42px; } /* um pouco maior no desktop */
+    }
+
+    .nav-cta{display:flex; gap:10px}
+
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; border:none; border-radius:12px; padding:12px 16px; font-weight:700; cursor:pointer}
+    .btn.primary{background:var(--brand); color:#fff}
+    .btn.primary:hover{background:var(--brand-dark)}
+    .btn.ghost{background:#fff; border:2px solid #E5E7EB; color:var(--text)}
+    .btn.whatsapp{background:var(--accent); color:#fff}
+    .btn.whatsapp svg{width:20px; height:20px; display:block}
+    .btn.icon-left svg{margin-right:8px}
+
+    .hero{background:linear-gradient(180deg, #0F1115 0%, #161A22 100%); color:#fff; padding:56px 0 28px; position:relative; overflow:hidden}
+    .hero h1{font-size: clamp(28px, 5vw, 44px); line-height:1.1; margin:0 0 12px}
+    .hero p{color:#D1D5DB; margin:0 0 22px}
+    .hero .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 24px}
+    .badge{background:rgba(255,255,255,.1); padding:8px 12px; border-radius:999px; font-weight:600; display:inline-flex; align-items:center; gap:8px}
+    .hero-card{background:#fff; color:var(--text); border-radius:20px; padding:18px; box-shadow:var(--shadow-strong); display:grid; grid-template-columns: 1fr; gap:14px}
+
+    .promocao{background:#fff; padding:36px 0; border-bottom:1px solid #E5E7EB}
+    .promocao .container{text-align:center}
+    .promocao h2{margin:0 0 12px; color:var(--brand)}
+    .promocao p{margin:0; color:var(--muted)}
+
+    .grid{display:grid; gap:18px}
+    @media(min-width:720px){ .grid.cols-3{grid-template-columns: repeat(3, 1fr)} }
+    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card h3{margin:6px 0 8px}
+    .card p{margin:0; color:var(--muted)}
+
+    .sizes{padding:36px 0}
+    .sizes h2{margin:0 0 8px}
+    .sizes .subtitle{margin:0 0 22px; color:var(--muted)}
+    .price{font-size:24px; font-weight:900}
+    .chip{display:inline-flex; align-items:center; gap:8px; background:#F3F4F6; border-radius:999px; padding:6px 10px; font-weight:700}
+
+    .payment{padding:36px 0}
+    .payment h2{margin:0 0 12px}
+    .payment ul{list-style:none; padding:0; margin:0; display:grid; gap:8px}
+    .payment li{display:flex; align-items:center; gap:10px; padding:8px 0}
+
+    .contact{padding:36px 0}
+    .contact .info{display:grid; gap:14px}
+    @media(min-width:900px){ .contact .info{grid-template-columns: 1fr 1fr}}
+
+    footer{padding:24px 0 80px; color:#6B7280}
+
+    .sticky-bar{position:fixed; bottom:0; left:0; right:0; z-index:30; background:#fff; padding:10px; box-shadow:0 -8px 24px rgba(0,0,0,.1); display:flex; gap:10px}
+    .sticky-bar .btn{flex:1}
+
+    .floating-wa{position:fixed; right:16px; bottom:92px; z-index:35; width:58px; height:58px; border-radius:999px; display:grid; place-items:center; background:var(--accent); color:#fff; box-shadow:var(--shadow-strong)}
+    .floating-wa svg{width:26px; height:26px; display:block}
+
+    .mt-2{margin-top:8px}
+    .mt-3{margin-top:12px}
+    .mt-4{margin-top:16px}
+    .mt-6{margin-top:24px}
+    .center{text-align:center}
+
+    /* Seção Pedir agora */
+    .ask{background:#fff; padding:36px 0; border-top:1px solid #E5E7EB; border-bottom:1px solid #E5E7EB}
+    .ask .grid-actions{display:grid; gap:12px}
+    @media(min-width:720px){ .ask .grid-actions{grid-template-columns: repeat(2, 1fr)} }
+    .btn.call{background:#F3F4F6; color:#111827; border:2px solid #E5E7EB}
+    .btn.call svg{width:20px; height:20px; display:block}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header role="banner" aria-label="Topo do site">
+    <div class="container nav">
+      <!-- LOGO como imagem (remove texto/emoji) -->
+      <a href="#" class="logo" aria-label="Comparsi Gás">
+        <!-- Coloque o arquivo logo-comparsi.png na mesma pasta do HTML -->
+        <img src="logo-comparsi.png" alt="Comparsi Gás" class="logo-img" width="300" height="80">
+      </a>
+
+      <nav class="nav-cta" aria-label="Ações principais">
+        <a class="btn ghost" href="#tamanhos" aria-label="Ver tamanhos e preços">Tamanhos</a>
+        <!-- Todos os CTAs levam à seção #pedir -->
+        <a class="btn primary" id="cta-top" href="#pedir" aria-label="Pedir gás pelo WhatsApp">Pedir pelo WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" role="region" aria-label="Chamada principal">
+    <div class="container">
+      <div class="grid" style="grid-template-columns:1.2fr .8fr; align-items:center; gap:20px">
+        <div>
+          <h1>Precisou de gás? Chama a Comparsi! 💬</h1>
+          <p>Tele-entrega rápida e segura em Carlos Barbosa, Barão, São Pedro da Serra, São Vendelino, Garibaldi, Boa Vista do Sul e Imigrante.</p>
+          <div class="badges">
+            <span class="badge">⏱️ Entrega média: 15 a 30 minutos</span>
+            <span class="badge">🛡️ Lacre de segurança garantido</span>
+            <span class="badge">💳 Cartão, Pix, Dinheiro, Vale-gás</span>
+            <span class="badge">🏪 Residencial, comercial e condomínios</span>
+          </div>
+          <div class="grid" style="grid-template-columns: 1fr; gap:10px">
+            <a class="btn primary" id="cta-hero" href="#pedir">Pedir agora</a>
+          </div>
+          <p class="mt-3" style="color:#9CA3AF; font-size:14px">Horário: Segunda a sábado: 07h30 a 21h • Domingo: 08h a 20h</p>
+        </div>
+        <div class="hero-card" aria-label="Destaques">
+          <div class="card" style="margin:0">
+            <strong>🏠 Cobertura</strong>
+            <p class="mt-2">Carlos Barbosa, Barão, São Pedro da Serra, São Vendelino, Garibaldi, Boa Vista do Sul, Imigrante</p>
+          </div>
+          <div class="card" style="margin:0">
+            <strong>☎️ Telefones</strong>
+            <p class="mt-2">
+              <a href="tel:+555434611160">(54) 3461-1160</a> •
+              <a href="tel:+555434615583">(54) 3461-5583</a> •
+              <a href="tel:+5554996401198">(54) 99640-1198</a> (WhatsApp Matriz)
+            </p>
+          </div>
+          <div class="card" style="margin:0">
+            <strong>📍 Endereço Matriz</strong>
+            <p class="mt-2">
+              <a href="https://maps.google.com/?q=Travessa%20Morro%20do%20Calv%C3%A1rio%2C%20155%2C%20Carlos%20Barbosa%20RS%2095185-000" target="_blank" rel="noopener">
+                Travessa Morro do Calvário, 155, Bairro São Paulo, Carlos Barbosa/RS, 95185-000
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promoção Fidelidade -->
+  <section class="promocao" role="region" aria-label="Programa Fidelidade">
+    <div class="container">
+      <h2>Programa Fidelidade Comparsi 💙</h2>
+      <p>A cada botijão comprado, você ganha um cupom de R$ 5,00 para usar na próxima compra. Acumule e economize em todas as recargas. Promoção válida para todas as unidades Comparsi Gás.</p>
+      <a class="btn primary mt-4" href="#tamanhos" aria-label="Ver tamanhos e preços">Ver tamanhos</a>
+    </div>
+  </section>
+
+  <!-- Seção Pedir agora -->
+  <section class="ask" id="pedir" role="region" aria-label="Pedir agora">
+    <div class="container">
+      <h2 class="center">Pedir agora</h2>
+      <p class="center" style="color:var(--muted); margin:8px 0 22px">Escolha como prefere falar com a unidade.</p>
+
+      <div class="grid-actions">
+        <!-- WhatsApp Barão -->
+        <a class="btn whatsapp icon-left" href="https://wa.me/5551998628866?text=Ol%C3%A1!%20Quero%20pedir%20um%20g%C3%A1s%20agora." target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp da unidade de Barão">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"/></svg>
+          WhatsApp Barão
+        </a>
+
+        <!-- WhatsApp Carlos Barbosa -->
+        <a class="btn whatsapp icon-left" href="https://wa.me/5554996401198?text=Ol%C3%A1!%20Quero%20pedir%20um%20g%C3%A1s%20agora." target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp da matriz em Carlos Barbosa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"/></svg>
+          WhatsApp Carlos Barbosa
+        </a>
+
+        <!-- Ligar Barão -->
+        <a class="btn call icon-left" href="tel:+555136962148" aria-label="Ligar para a unidade de Barão">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#111827" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"/></svg>
+          Ligar Barão
+        </a>
+
+        <!-- Ligar Carlos Barbosa -->
+        <a class="btn call icon-left" href="tel:+555434611160" aria-label="Ligar para a matriz em Carlos Barbosa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#111827" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"/></svg>
+          Ligar Carlos Barbosa
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sizes / Preços -->
+  <section class="sizes container" id="tamanhos" role="region" aria-label="Tamanhos e preços">
+    <h2 class="center">Tamanhos disponíveis</h2>
+    <p class="center subtitle">Escolha o tipo ideal para o seu consumo.</p>
+
+    <div class="grid cols-3">
+      <article class="card" aria-labelledby="p5">
+        <div class="chip">🟡 P5 (5 kg)</div>
+        <h3 id="p5" class="mt-3">Portátil</h3>
+        <p>Ideal para fogareiros, acampamentos e usos leves.</p>
+        <a class="btn primary mt-4" href="#pedir">Pedir P5</a>
+      </article>
+
+      <article class="card" aria-labelledby="p13">
+        <div class="chip">🔵 P13 (13 kg)</div>
+        <h3 id="p13" class="mt-3">Residencial</h3>
+        <p>O mais comum para uso doméstico. Perfeito para fogões convencionais.</p>
+        <a class="btn primary mt-4" href="#pedir">Pedir P13</a>
+      </article>
+
+      <article class="card" aria-labelledby="p20">
+        <div class="chip">🟢 P20 (20 kg)</div>
+        <h3 id="p20" class="mt-3">Empilhadeiras</h3>
+        <p>Usado em empilhadeiras industriais, com alto rendimento e segurança.</p>
+        <a class="btn primary mt-4" href="#pedir">Pedir P20</a>
+      </article>
+
+      <article class="card" aria-labelledby="p45">
+        <div class="chip">🔴 P45 (45 kg)</div>
+        <h3 id="p45" class="mt-3">Comercial e Condomínios</h3>
+        <p>Recomendado para restaurantes, empresas e condomínios. Destaque: repesagem garantida para eventuais sobras de gás dentro do cilindro. Pagamento via boleto disponível apenas para empresas e condomínios.</p>
+        <a class="btn primary mt-4" href="#pedir">Pedir P45</a>
+      </article>
+    </div>
+
+    <div class="card mt-6 center" aria-live="polite">
+      💡 Dica: trocamos e conferimos o regulador e a mangueira. Segurança em primeiro lugar.
+    </div>
+  </section>
+
+  <!-- Formas de pagamento -->
+  <section class="payment container" role="region" aria-label="Formas de pagamento">
+    <h2 class="center">Formas de pagamento</h2>
+    <ul>
+      <li>💳 Cartão de crédito e débito</li>
+      <li>📱 Pix</li>
+      <li>💵 Dinheiro</li>
+      <li>🎫 Vale-gás</li>
+      <li>📄 Boleto (somente para empresas e condomínios)</li>
+    </ul>
+  </section>
+
+  <!-- Contato / Local -->
+  <section class="contact" role="region" aria-label="Contato e localização">
+    <div class="container info">
+
+      <!-- Matriz -->
+      <div class="card">
+        <h3>Matriz | Carlos Barbosa/RS</h3>
+        <p><strong>Endereço:</strong> Travessa Morro do Calvário, 155, Bairro São Paulo, Carlos Barbosa/RS, 95185-000</p>
+        <p><strong>Telefones:</strong> <a href="tel:+555434611160">(54) 3461-1160</a> • <a href="tel:+555434615583">(54) 3461-5583</a> • <a href="tel:+5554996401198">(54) 99640-1198</a> (WhatsApp)</p>
+        <p><strong>E-mail:</strong> <a href="mailto:comparsiatendimento@comparsi.com.br">comparsiatendimento@comparsi.com.br</a></p>
+        <p><a href="https://maps.google.com/?q=Travessa%20Morro%20do%20Calv%C3%A1rio%2C%20155%2C%20Carlos%20Barbosa%20RS%2095185-000" target="_blank" rel="noopener">Ver no Google Maps</a></p>
+        <p><strong>Horários</strong></p>
+        <p>Segunda a sábado: 07h30 a 21h</p>
+        <p>Domingos e feriados: 08h a 20h</p>
+      </div>
+
+      <!-- Filial -->
+      <div class="card">
+        <h3>Filial | Barão/RS</h3>
+        <p><strong>Endereço:</strong> R. da Estação, 1575, Centro, Barão/RS, 95730-000</p>
+        <p><strong>Telefones:</strong> <a href="tel:+555136962148">(51) 3696-2148</a> • <a href="tel:+5551998628866">(51) 99862-8866</a> (WhatsApp)</p>
+        <p><a href="https://maps.google.com/?q=R.%20da%20Esta%C3%A7%C3%A3o%2C%201575%2C%20Centro%2C%20Bar%C3%A3o%2FRS%2C%2095730-000" target="_blank" rel="noopener">Ver no Google Maps</a></p>
+        <p><strong>Horários</strong></p>
+        <p>Segunda a sábado: 07h30 a 21h</p>
+        <p>Domingos e feriados: 08h a 20h</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="center">
+    © <span id="y"></span> Comparsi Gás. Todos os direitos reservados.
+  </footer>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky-bar">
+    <a class="btn ghost" href="tel:+555136962148" aria-label="Ligar para a unidade de Barão">(51) 3696-2148</a>
+    <a class="btn whatsapp icon-left" href="#pedir" aria-label="Pedir pelo WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"/>
+      </svg>
+      Pedir no WhatsApp
+    </a>
+  </div>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a class="floating-wa" href="#pedir" aria-label="Abrir opções de pedido">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
+      <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.21 2.21z"/>
+    </svg>
+  </a>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
